@@ -6,6 +6,7 @@
     "airbnb",
     "prettier"
   ],
+  "globals": { "JSX": true },
   "ignorePatterns": "*.js",
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -20,15 +21,16 @@
       { "varsIgnorePattern": "^_" }
     ],
     "@typescript-eslint/typedef": ["warn", { "arrowParameter": true }],
-    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-explicit-any": ["warn"],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "arrow-body-style": "warn",
     "import/extensions": "off",
+    "import/prefer-default-export": "off",
     "no-console": "warn",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }],
-    "react/react-in-jsx-scope": "off",
-    "arrow-body-style": "warn"
+    "react/react-in-jsx-scope": "off"
   },
   "settings": { "import/resolver": { "typescript": {} } }
 }
