@@ -1,0 +1,33 @@
+{
+  "env": { "browser": true, "es2021": true, "jest/globals": true },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["jest"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/typedef": ["warn", { "arrowParameter": true }],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-explicit-any": ["warn"],
+    "import/extensions": "off",
+    "no-console": "warn",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "arrow-body-style": "warn"
+  },
+  "settings": { "import/resolver": { "typescript": {} } }
+}
