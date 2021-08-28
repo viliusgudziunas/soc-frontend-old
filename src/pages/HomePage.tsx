@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from 'components/table';
+} from 'lib/table';
 import { ReactElement } from 'react';
 
 export const HomePage = (): ReactElement => (
