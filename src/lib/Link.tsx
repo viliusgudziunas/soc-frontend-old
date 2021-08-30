@@ -7,11 +7,9 @@ interface Props {
   to: string;
 }
 
-export const AppNavLink = ({
-  to,
-  children,
-  alignDirection,
-}: Props): ReactElement => {
+export const AppNavLink = (props: Props): ReactElement => {
+  const { children, to, alignDirection } = props;
+
   const [className, setClassName] = useState('p-6 hover:bg-gray-300');
 
   const setAlignedClass = () => {

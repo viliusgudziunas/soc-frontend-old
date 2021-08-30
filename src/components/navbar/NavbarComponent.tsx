@@ -6,6 +6,7 @@ export const NavbarComponent = (): ReactElement => (
     {/* // TODO: Add icon here */}
     <div className='m-6 mr-12'>Icon here</div>
     <AppNavLink to='/'>Home</AppNavLink>
+    <AppNavLink to='/standings'>Standings</AppNavLink>
     <AppNavLink to='/about'>About</AppNavLink>
     <AppNavLink to='/login' alignDirection='right'>
       Login

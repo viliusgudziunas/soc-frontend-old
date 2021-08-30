@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
 import { ChildrenProps } from 'shared/types';
 
-export const Table = ({ children }: ChildrenProps): ReactElement => (
-  <table className='divide-y divide-gray-300'>{children}</table>
-);
+export const Table = (props: ChildrenProps): ReactElement => {
+  const { children } = props;
+
+  return <table className='divide-y divide-gray-300'>{children}</table>;
+};
