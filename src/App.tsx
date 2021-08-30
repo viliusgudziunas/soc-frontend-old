@@ -1,5 +1,5 @@
 import { Container } from 'components/Container';
-import { NavbarComponent } from 'components/navbar/NavbarComponent';
+import { Navbar } from 'components/Navbar';
 import { ReactElement } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'Routes';
@@ -7,7 +7,7 @@ import { Routes } from 'Routes';
 const App = (): ReactElement => (
   <div className='font-mono'>
     <Router>
-      <NavbarComponent />
+      <Navbar />
       <Container>
         <Routes />
       </Container>

@@ -7,7 +7,7 @@ interface Props {
   to: string;
 }
 
-export const AppNavLink = (props: Props): ReactElement => {
+export const NavbarLink = (props: Props): ReactElement => {
   const { children, to, alignDirection } = props;
 
   const [className, setClassName] = useState('p-6 hover:bg-gray-300');
@@ -30,4 +30,4 @@ export const AppNavLink = (props: Props): ReactElement => {
   );
 };
 
-AppNavLink.defaultProps = { alignDirection: undefined } as Partial<Props>;
+NavbarLink.defaultProps = { alignDirection: undefined } as Partial<Props>;
