@@ -1,5 +1,9 @@
+import { PageContainer } from 'lib/containers';
+import { Header } from 'lib/Header';
 import { ReactElement } from 'react';
 
 export const LoginPage = (): ReactElement => (
-  <div className='flex-row'>Login</div>
+  <PageContainer>
+    <Header>Login</Header>
+  </PageContainer>
 );
