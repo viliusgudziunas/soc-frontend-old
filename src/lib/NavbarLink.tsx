@@ -1,27 +1,28 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Classes } from 'shared/types';
+import Utils from 'shared/utils';
 
 interface Props {
   alignDirection?: 'left' | 'right';
-  children: string;
+  children: ReactNode;
   to: string;
 }
 
 export const NavbarLink = (props: Props): ReactElement => {
   const { children, to, alignDirection } = props;
 
-  const [className, setClassName] = useState('p-6 hover:bg-gray-300');
+  const [className, setClassName] = useState('');
+
+  const classes: Classes = { 'p-6': true, 'hover:bg-gray-300': true };
 
   const setAlignedClass = () => {
-    const alignClass = alignDirection === 'right' ? 'ml-auto' : 'mr-auto';
-    setClassName(`${className} ${alignClass}`);
+    classes['ml-auto'] = alignDirection === 'right';
+    classes['mr-auto'] = alignDirection === 'left';
+    setClassName(Utils.makeClassName(classes));
   };
 
-  useEffect(() => {
-    if (alignDirection) {
-      setAlignedClass();
-    }
-  }, []);
+  useEffect(() => setAlignedClass(), []);
 
   return (
     <NavLink to={to} exact className={className} activeClassName='bg-gray-200'>

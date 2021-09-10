@@ -4,6 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 
 export const Routes = (): ReactElement => (
   <Switch>
+    <Route path='/' exact>
+      <Pages.HomePage />
+    </Route>
     <Route path='/about'>
       <Pages.AboutPage />
     </Route>
@@ -13,8 +16,8 @@ export const Routes = (): ReactElement => (
     <Route path='/standings'>
       <Pages.StandingsPage />
     </Route>
-    <Route path='/'>
-      <Pages.HomePage />
+    <Route path='/register'>
+      <Pages.RegisterPage />
     </Route>
   </Switch>
 );

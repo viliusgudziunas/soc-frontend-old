@@ -3,17 +3,18 @@ import { Classes } from 'shared/types';
 import Utils from 'shared/utils';
 
 interface StandingsDto {
-  place: number;
-  name: string;
   calories: number;
+  id: number;
+  name: string;
+  place: number;
 }
 
 const data: StandingsDto[] = [
-  { place: 1, name: 'Vilius', calories: 2500 },
-  { place: 2, name: 'Test', calories: 2000 },
-  { place: 3, name: 'Titas', calories: 1750 },
-  { place: 4, name: 'Marius', calories: 1500 },
-  { place: 5, name: 'Belekas', calories: 150 },
+  { id: 1, place: 1, name: 'Vilius', calories: 2500 },
+  { id: 2, place: 2, name: 'Test', calories: 2000 },
+  { id: 3, place: 3, name: 'Titas', calories: 1750 },
+  { id: 4, place: 4, name: 'Marius', calories: 1500 },
+  { id: 5, place: 5, name: 'Belekas', calories: 150 },
 ];
 
 export const StandingsTable = (): ReactElement => {
@@ -30,7 +31,7 @@ export const StandingsTable = (): ReactElement => {
       </thead>
       <tbody className='divide-y'>
         {data.map((entry: StandingsDto, index: number) => {
-          const { place, name, calories } = entry;
+          const { id, place, name, calories } = entry;
 
           const indexIsEven = index % 2 === 0;
           trClasses['bg-white'] = indexIsEven;
@@ -39,7 +40,7 @@ export const StandingsTable = (): ReactElement => {
           const className = Utils.makeClassName(trClasses);
 
           return (
-            <tr className={className}>
+            <tr className={className} key={id}>
               <td className='p-8 py-5 text-center'>{place}</td>
               <td className='p-8 py-5'>{name}</td>
               <td className='p-8 py-5 text-center'>{calories}</td>
