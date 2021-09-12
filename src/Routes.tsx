@@ -19,5 +19,8 @@ export const Routes = (): ReactElement => (
     <Route path='/register'>
       <Pages.RegisterPage />
     </Route>
+    <Route path='/profile'>
+      <Pages.ProfilePage />
+    </Route>
   </Switch>
 );
