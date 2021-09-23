@@ -1,6 +1,6 @@
+import { ClassesObjectModel } from 'models';
 import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Classes } from 'shared/types';
 import Utils from 'shared/utils';
 
 interface Props {
@@ -14,7 +14,10 @@ export const NavbarLink = (props: Props): ReactElement => {
 
   const [className, setClassName] = useState('');
 
-  const classes: Classes = { 'p-6': true, 'hover:bg-gray-300': true };
+  const classes: ClassesObjectModel = {
+    'p-6': true,
+    'hover:bg-gray-300': true,
+  };
 
   const setAlignedClass = () => {
     classes['ml-auto'] = alignDirection === 'right';

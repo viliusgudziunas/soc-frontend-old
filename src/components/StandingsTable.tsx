@@ -1,5 +1,5 @@
+import { ClassesObjectModel } from 'models';
 import { ReactElement } from 'react';
-import { Classes } from 'shared/types';
 import Utils from 'shared/utils';
 
 interface StandingsDto {
@@ -18,7 +18,7 @@ const data: StandingsDto[] = [
 ];
 
 export const StandingsTable = (): ReactElement => {
-  const trClasses: Classes = { 'hover:bg-blue-300': true };
+  const trClasses: ClassesObjectModel = { 'hover:bg-blue-300': true };
 
   return (
     <table className='m-6 divide-y'>

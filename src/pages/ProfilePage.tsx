@@ -1,4 +1,4 @@
-import { PageContainer } from 'lib/containers';
+import { PageContainer } from 'components/containers';
 import { Header } from 'lib/Header';
 import { ProfileStatistic } from 'lib/ProfileStatistic';
 import { ReactElement } from 'react';
@@ -26,7 +26,7 @@ export const ProfilePage = (): ReactElement => {
         </div>
       </div>
       <div className='my-10 text-xl'>My stats</div>
-      {/* TOOD: tailwind has support for lists I think */}
+      {/* // TODO: tailwind has support for lists I think */}
       <ProfileStatistic name='Registered on' value={createdOn} />
       <ProfileStatistic name='Calories burnt' value={totalCalories} />
     </PageContainer>

@@ -1,4 +1,4 @@
-import { PageContainer } from 'lib/containers';
+import { PageContainer } from 'components/containers';
 import { Header } from 'lib/Header';
 import { ReactElement } from 'react';
 

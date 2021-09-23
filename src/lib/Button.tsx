@@ -1,3 +1,4 @@
+import { ClassesObjectModel } from 'models';
 import { ReactElement, ReactNode, useEffect } from 'react';
 import Utils from 'shared/utils';
 
@@ -10,7 +11,7 @@ interface Props {
 export const Button = (props: Props): ReactElement => {
   const { children, type, disabled } = props;
 
-  const classes = {
+  const classes: ClassesObjectModel = {
     'bg-blue-500': true,
     'font-bold': true,
     'mt-2': true,

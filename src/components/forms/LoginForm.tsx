@@ -52,7 +52,7 @@ export const LoginForm = (): ReactElement => {
       validate={handleValidate}
       onSubmit={handleSubmit}
     >
-      {/* TOOD: find type for props below */}
+      {/* TODO: find type for props below */}
       {() => (
         <Form className='flex flex-col'>
           <TextField attribute='email' required type='email'>
@@ -63,7 +63,7 @@ export const LoginForm = (): ReactElement => {
           </TextField>
 
           <Button type='submit' disabled={submitDisabled}>
-            Register
+            Login
           </Button>
         </Form>
       )}

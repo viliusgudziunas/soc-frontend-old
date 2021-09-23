@@ -1,5 +1,5 @@
+import { PageContainer } from 'components/containers';
 import { LoginForm } from 'components/forms';
-import { PageContainer } from 'lib/containers';
 import { Header } from 'lib/Header';
 import { ReactElement } from 'react';
 
