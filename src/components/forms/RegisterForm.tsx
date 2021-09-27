@@ -70,7 +70,7 @@ export const RegisterForm = (props: Props): ReactElement => {
       validate={handleValidate}
       onSubmit={handleSubmit}
     >
-      {/* TOOD: find type for props below */}
+      {/* // TODO: find type for props below */}
       {() => (
         <Form className='flex flex-col'>
           <TextField attribute='email' required type='email'>
