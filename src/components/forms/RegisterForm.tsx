@@ -1,11 +1,11 @@
 import { Form, Formik, FormikHelpers } from 'formik';
 import { Button } from 'lib/Button';
 import { TextField } from 'lib/TextField';
-import { UserAuthModel } from 'models';
+import { UserRegisterModel } from 'models';
 import { ReactElement, useState } from 'react';
 
 interface Props {
-  handleSubmitFormFunc: (data: UserAuthModel) => Promise<void>;
+  handleSubmitFormFunc: (data: UserRegisterModel) => void;
 }
 
 interface FormErrors {
@@ -15,7 +15,7 @@ interface FormErrors {
   confirmPassword?: string;
 }
 
-const initialFormData: UserAuthModel = {
+const initialFormData: UserRegisterModel = {
   email: '',
   name: '',
   password: '',
@@ -24,18 +24,17 @@ const initialFormData: UserAuthModel = {
 
 export const RegisterForm = (props: Props): ReactElement => {
   const { handleSubmitFormFunc } = props;
-
   const [submitDisabled, setSubmitDisabled] = useState(true);
 
-  const handleSubmit = async (
-    values: UserAuthModel,
-    actions: FormikHelpers<UserAuthModel>
-  ): Promise<void> => {
-    await handleSubmitFormFunc(values);
+  const handleSubmit = (
+    values: UserRegisterModel,
+    actions: FormikHelpers<UserRegisterModel>
+  ): void => {
+    handleSubmitFormFunc(values);
     actions.resetForm();
   };
 
-  const handleValidate = (values: UserAuthModel): FormErrors => {
+  const handleValidate = (values: UserRegisterModel): FormErrors => {
     const errors: FormErrors = {};
     const { email, name, password, confirmPassword } = values;
 

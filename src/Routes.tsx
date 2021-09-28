@@ -1,3 +1,4 @@
+import { PrivateRoute } from 'components/PrivateRoute';
 import * as Pages from 'pages';
 import { ReactElement } from 'react';
 import { Route, Switch } from 'react-router-dom';
@@ -13,14 +14,14 @@ export const Routes = (): ReactElement => (
     <Route path='/login'>
       <Pages.LoginPage />
     </Route>
-    <Route path='/standings'>
+    <PrivateRoute path='/standings'>
       <Pages.StandingsPage />
-    </Route>
+    </PrivateRoute>
     <Route path='/register'>
       <Pages.RegisterPage />
     </Route>
-    <Route path='/profile'>
+    <PrivateRoute path='/profile'>
       <Pages.ProfilePage />
-    </Route>
+    </PrivateRoute>
   </Switch>
 );

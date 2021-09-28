@@ -1,23 +1,28 @@
 import { AppContainer } from 'components/containers';
 import { Navbar } from 'components/Navbar';
+import { AuthContext } from 'contexts';
 import { ReactElement, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Routes } from 'Routes';
+import { AuthService } from 'services';
 
 const App = (): ReactElement => {
-  // TODO: Use react context to set this maybe
-  const [isLoggedIn, _setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(
+    AuthService.isLoggedIn()
+  );
 
   return (
     <div className='font-mono h-screen bg-gray-100 text-gray-700'>
-      <Router>
-        <Navbar isLoggedIn={isLoggedIn} />
-        <AppContainer>
-          <Routes />
-          <ToastContainer />
-        </AppContainer>
-      </Router>
+      <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+        <Router>
+          <Navbar />
+          <AppContainer>
+            <Routes />
+            <ToastContainer />
+          </AppContainer>
+        </Router>
+      </AuthContext.Provider>
     </div>
   );
 };

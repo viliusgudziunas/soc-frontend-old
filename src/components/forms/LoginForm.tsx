@@ -1,11 +1,11 @@
 import { Form, Formik, FormikHelpers } from 'formik';
 import { Button } from 'lib/Button';
 import { TextField } from 'lib/TextField';
+import { UserLoginModel } from 'models';
 import { ReactElement, useState } from 'react';
 
-interface FormData {
-  email: string;
-  password: string;
+interface Props {
+  handleSubmitFormFunc: (data: UserLoginModel) => void;
 }
 
 interface FormErrors {
@@ -13,23 +13,24 @@ interface FormErrors {
   password?: string;
 }
 
-const initialFormData: FormData = {
+const initialFormData: UserLoginModel = {
   email: '',
   password: '',
 };
 
-export const LoginForm = (): ReactElement => {
+export const LoginForm = (props: Props): ReactElement => {
+  const { handleSubmitFormFunc } = props;
   const [submitDisabled, setSubmitDisabled] = useState(true);
 
   const handleSubmit = (
-    _values: FormData,
-    actions: FormikHelpers<FormData>
+    values: UserLoginModel,
+    actions: FormikHelpers<UserLoginModel>
   ): void => {
-    // TODO: submit form
+    handleSubmitFormFunc(values);
     actions.resetForm();
   };
 
-  const handleValidate = (values: FormData): FormErrors => {
+  const handleValidate = (values: UserLoginModel): FormErrors => {
     const errors: FormErrors = {};
     const { email, password } = values;
 

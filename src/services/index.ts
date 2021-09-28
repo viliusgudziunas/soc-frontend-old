@@ -1,2 +1,3 @@
-export { ApiService } from './ApiService';
-export { ToastService } from './ToastService';
+export { ApiService } from './apiService';
+export { AuthService } from './authService';
+export { ToastService } from './toastService';

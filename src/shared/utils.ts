@@ -13,6 +13,6 @@ export default class Utils {
     const isValueIsNull = value === null;
     const isValueIsUndefined = value === undefined;
 
-    return !(isValueIsNull && isValueIsUndefined);
+    return !(isValueIsNull || isValueIsUndefined);
   };
 }

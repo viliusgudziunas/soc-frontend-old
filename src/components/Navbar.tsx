@@ -1,25 +1,27 @@
+import { AuthContext } from 'contexts';
 import { NavbarLink } from 'lib/NavbarLink';
-import { ReactElement } from 'react';
+import { ReactElement, useContext } from 'react';
 
-interface Props {
-  isLoggedIn: boolean;
-}
-
-export const Navbar = (props: Props): ReactElement => {
-  const { isLoggedIn } = props;
+export const Navbar = (): ReactElement => {
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <nav className='flex flex-row border-b-2 bg-white'>
       {/* // TODO: Add icon here */}
       <div className='m-6 mr-12'>Icon here</div>
       <NavbarLink to='/'>Home</NavbarLink>
-      <NavbarLink to='/standings'>Standings</NavbarLink>
+
+      {isLoggedIn ? <NavbarLink to='/standings'>Standings</NavbarLink> : null}
+
       <NavbarLink to='/about'>About</NavbarLink>
 
       {isLoggedIn ? (
-        <NavbarLink to='/profile' alignDirection='right'>
-          Profile
-        </NavbarLink>
+        <>
+          <NavbarLink to='/profile' alignDirection='right'>
+            Profile
+          </NavbarLink>
+          <NavbarLink to='/logout'>Logout</NavbarLink>
+        </>
       ) : (
         <>
           <NavbarLink to='/login' alignDirection='right'>
