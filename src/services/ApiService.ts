@@ -15,6 +15,11 @@ export interface LoginResponseDto {
   };
 }
 
+export interface LogoutResponseDto {
+  status: 'success' | 'fail';
+  message: string;
+}
+
 export const ApiService = {
   addUser: (
     data: UserRegisterModel
@@ -30,5 +35,15 @@ export const ApiService = {
     const body = data;
 
     return axios.post<LoginResponseDto>(endpoint, body);
+  },
+
+  logout: (authToken: string): Promise<AxiosResponse<LogoutResponseDto>> => {
+    const endpoint = endpoints.auth.logout;
+    const body = {};
+    const config: AxiosRequestConfig = {
+      headers: { Authorization: `Bearer aa${authToken}` },
+    };
+
+    return axios.post<LogoutResponseDto>(endpoint, body, config);
   },
 };
