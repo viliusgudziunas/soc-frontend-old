@@ -8,19 +8,21 @@ export const Navbar = (): ReactElement => {
   return (
     <nav className='flex flex-row border-b-2 bg-white'>
       {/* // TODO: Add icon here */}
-      <div className='m-6 mr-12'>Icon here</div>
+      {/* <div className='m-6 mr-12'>Icon here</div> */}
       <NavbarLink to='/'>Home</NavbarLink>
 
-      {isLoggedIn ? <NavbarLink to='/standings'>Standings</NavbarLink> : null}
+      {/* {isLoggedIn ? <NavbarLink to='/standings'>Standings</NavbarLink> : null} */}
 
-      <NavbarLink to='/about'>About</NavbarLink>
+      {/* <NavbarLink to='/about'>About</NavbarLink> */}
 
       {isLoggedIn ? (
         <>
-          <NavbarLink to='/profile' alignDirection='right'>
+          {/* <NavbarLink to='/profile' alignDirection='right'>
             Profile
+          </NavbarLink> */}
+          <NavbarLink to='/logout' alignDirection='right'>
+            Logout
           </NavbarLink>
-          <NavbarLink to='/logout'>Logout</NavbarLink>
         </>
       ) : (
         <>

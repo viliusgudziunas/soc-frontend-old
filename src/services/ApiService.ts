@@ -1,8 +1,9 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { UserDto, UserLoginModel, UserRegisterModel } from 'models';
+import { AddWorkoutModel } from 'shared/types';
 import { endpoints } from '../shared/endpoints';
 
-export interface LoginResponseDto {
+export interface ResponseWithDataDto {
   status: 'success' | 'fail';
   data: {
     // * Success
@@ -30,20 +31,35 @@ export const ApiService = {
     return axios.post(endpoint, body);
   },
 
-  login: (data: UserLoginModel): Promise<AxiosResponse<LoginResponseDto>> => {
+  login: (
+    data: UserLoginModel
+  ): Promise<AxiosResponse<ResponseWithDataDto>> => {
     const endpoint = endpoints.auth.login;
     const body = data;
 
-    return axios.post<LoginResponseDto>(endpoint, body);
+    return axios.post<ResponseWithDataDto>(endpoint, body);
   },
 
   logout: (authToken: string): Promise<AxiosResponse<LogoutResponseDto>> => {
     const endpoint = endpoints.auth.logout;
     const body = {};
     const config: AxiosRequestConfig = {
-      headers: { Authorization: `Bearer aa${authToken}` },
+      headers: { Authorization: `Bearer ${authToken}` },
     };
 
     return axios.post<LogoutResponseDto>(endpoint, body, config);
+  },
+
+  addWorkout: (
+    data: AddWorkoutModel,
+    authToken: string
+  ): Promise<AxiosResponse<ResponseWithDataDto>> => {
+    const endpoint = endpoints.workouts.create;
+    const body = data;
+    const config: AxiosRequestConfig = {
+      headers: { Authorization: `Bearer ${authToken}` },
+    };
+
+    return axios.post<ResponseWithDataDto>(endpoint, body, config);
   },
 };

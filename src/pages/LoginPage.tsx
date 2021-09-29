@@ -7,7 +7,7 @@ import { UserLoginModel } from 'models';
 import { ReactElement, useContext, useState } from 'react';
 import { Redirect } from 'react-router';
 import { ApiService, AuthService, ToastService } from 'services';
-import { LoginResponseDto } from 'services/apiService';
+import { ResponseWithDataDto } from 'services/apiService';
 
 export const LoginPage = (): ReactElement => {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -15,7 +15,7 @@ export const LoginPage = (): ReactElement => {
 
   const handleLogin = (data: UserLoginModel): void => {
     ApiService.login(data)
-      .then((response: AxiosResponse<LoginResponseDto>) => {
+      .then((response: AxiosResponse<ResponseWithDataDto>) => {
         const { authToken } = response.data.data;
         AuthService.login(authToken);
         ToastService.success('Logged in successfully!');

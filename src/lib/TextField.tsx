@@ -1,11 +1,13 @@
 import { ErrorMessage, Field } from 'formik';
 import { ReactElement, useEffect, useState } from 'react';
 
+type InputType = 'text' | 'email' | 'password' | 'number' | 'time' | 'date';
+
 interface Props {
   attribute: string;
   children: string;
   required?: boolean;
-  type?: 'text' | 'email' | 'password';
+  type?: InputType;
 }
 
 export const TextField = (props: Props): ReactElement => {

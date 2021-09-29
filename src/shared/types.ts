@@ -8,3 +8,10 @@ export interface UserDto {
 
 // * Need to create a standings table in backend and every time new calories are
 // * added, I should update the standings table
+
+export interface AddWorkoutModel {
+  name: string;
+  caloriesBurnt: number;
+  timeSpent: string;
+  workoutDate: string;
+}
