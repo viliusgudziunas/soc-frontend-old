@@ -6,9 +6,8 @@ import { Header } from 'lib/Header';
 import { UserLoginModel } from 'models';
 import { ReactElement, useContext, useState } from 'react';
 import { Redirect } from 'react-router';
+import { AuthService, ToastService } from 'services';
 import { ApiService, ResponseWithDataDto } from 'services/apiService';
-import { AuthService } from 'services/authService';
-import { ToastService } from 'services/toastService';
 
 export const LoginPage = (): ReactElement => {
   const { setIsLoggedIn } = useContext(AuthContext);
