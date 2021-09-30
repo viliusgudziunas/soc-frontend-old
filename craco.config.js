@@ -6,4 +6,9 @@ module.exports = {
       plugins: [require('tailwindcss'), require('autoprefixer')],
     },
   },
+  webpack: {
+    alias: {
+      services: path.join(path.resolve(__dirname, './src/services')),
+    },
+  },
 };
