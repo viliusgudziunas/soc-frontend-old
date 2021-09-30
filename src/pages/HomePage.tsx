@@ -2,7 +2,9 @@ import { PageContainer } from 'components/containers';
 import { AddWorkoutForm } from 'components/forms';
 import { Header } from 'lib/Header';
 import { ReactElement } from 'react';
-import { ApiService, AuthService, ToastService } from 'services';
+import { ApiService } from 'services/apiService';
+import { AuthService } from 'services/authService';
+import { ToastService } from 'services/toastService';
 import { AddWorkoutModel } from 'shared/types';
 
 export const HomePage = (): ReactElement => {

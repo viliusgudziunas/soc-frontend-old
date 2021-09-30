@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
 import { Redirect, Route } from 'react-router';
-import { AuthService } from 'services';
+import { AuthService } from 'services/authService';
 
 interface Props {
   children: ReactNode | undefined;

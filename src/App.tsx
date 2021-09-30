@@ -5,7 +5,7 @@ import { ReactElement, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Routes } from 'Routes';
-import { AuthService } from 'services';
+import { AuthService } from 'services/authService';
 
 const App = (): ReactElement => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(

@@ -4,7 +4,8 @@ import { Header } from 'lib/Header';
 import { UserRegisterModel } from 'models';
 import { ReactElement, useState } from 'react';
 import { Redirect } from 'react-router';
-import { ApiService, ToastService } from 'services';
+import { ApiService } from 'services/apiService';
+import { ToastService } from 'services/toastService';
 
 export const RegisterPage = (): ReactElement => {
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
