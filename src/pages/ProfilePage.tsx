@@ -1,8 +1,8 @@
-import { PageContainer } from 'components/containers';
-import { Header } from 'lib/Header';
-import { ProfileStatistic } from 'lib/ProfileStatistic';
 import { ReactElement } from 'react';
-import { UserDto } from 'shared/types';
+import { PageContainer } from '../components/containers/PageContainer';
+import { Header } from '../lib/Header';
+import { ProfileStatistic } from '../lib/ProfileStatistic';
+import { UserDto } from '../shared/types';
 
 // TODO: get this object from react context
 const user: UserDto = {

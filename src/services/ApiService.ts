@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { UserDto, UserLoginModel, UserRegisterModel } from 'models';
-import { AddWorkoutModel } from 'shared/types';
+import { UserLoginModel, UserRegisterModel } from '../models/userModel';
 import { endpoints } from '../shared/endpoints';
+import { AddWorkoutModel, UserDto } from '../shared/types';
 
 export interface ResponseWithDataDto {
   status: 'success' | 'fail';

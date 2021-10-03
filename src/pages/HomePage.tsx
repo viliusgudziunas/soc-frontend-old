@@ -1,11 +1,16 @@
-import { PageContainer } from 'components/containers';
-import { AddWorkoutForm } from 'components/forms';
-import { Header } from 'lib/Header';
-import { ReactElement } from 'react';
-import { ApiService, AuthService, ToastService } from 'services';
-import { AddWorkoutModel } from 'shared/types';
+import { ReactElement, useContext } from 'react';
+import { Redirect } from 'react-router';
+import { PageContainer } from '../components/containers/PageContainer';
+import { AddWorkoutForm } from '../components/forms/AddWorkoutForm';
+import { AuthContext } from '../contexts/authContext';
+import { Header } from '../lib/Header';
+import { ApiService } from '../services/apiService';
+import { AuthService } from '../services/authService';
+import { ToastService } from '../services/toastService';
+import { AddWorkoutModel } from '../shared/types';
 
 export const HomePage = (): ReactElement => {
+  const { isLoggedIn } = useContext(AuthContext);
   const handleAddWorkout = (data: AddWorkoutModel): void => {
     const authToken = AuthService.getAuthToken();
 
@@ -18,6 +23,10 @@ export const HomePage = (): ReactElement => {
         ToastService.error('An issue has occurred!');
       });
   };
+
+  if (!isLoggedIn) {
+    return <Redirect to='/login' />;
+  }
 
   return (
     <PageContainer>

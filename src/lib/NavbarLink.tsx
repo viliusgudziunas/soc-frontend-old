@@ -1,7 +1,7 @@
-import { ClassesObjectModel } from 'models';
 import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Utils from 'shared/utils';
+import { ClassesObjectModel } from '../models/classes-object-model';
+import Utils from '../shared/utils';
 
 interface Props {
   alignDirection?: 'left' | 'right';

@@ -1,8 +1,8 @@
 import { Form, Formik, FormikHelpers } from 'formik';
-import { Button } from 'lib/Button';
-import { TextField } from 'lib/TextField';
-import { UserLoginModel } from 'models';
 import { ReactElement, useState } from 'react';
+import { Button } from '../../lib/Button';
+import { TextField } from '../../lib/TextField';
+import { UserLoginModel } from '../../models/userModel';
 
 interface Props {
   handleSubmitFormFunc: (data: UserLoginModel) => void;

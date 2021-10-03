@@ -1,11 +1,11 @@
-import { AppContainer } from 'components/containers';
-import { Navbar } from 'components/Navbar';
-import { AuthContext } from 'contexts';
 import { ReactElement, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { Routes } from 'Routes';
-import { AuthService } from 'services';
+import { AppContainer } from './components/containers/AppContainer';
+import { Navbar } from './components/Navbar';
+import { AuthContext } from './contexts/authContext';
+import { Routes } from './Routes';
+import { AuthService } from './services/authService';
 
 const App = (): ReactElement => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(

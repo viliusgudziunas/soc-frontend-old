@@ -1,4 +1,4 @@
-import { ClassesObjectModel } from 'models';
+import { ClassesObjectModel } from '../models/classes-object-model';
 
 // TODO: Add specs for utils!
 export default class Utils {

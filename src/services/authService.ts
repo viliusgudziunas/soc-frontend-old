@@ -1,4 +1,4 @@
-import Utils from 'shared/utils';
+import Utils from '../shared/utils';
 
 export const AuthService = {
   getAuthToken: (): string => localStorage.getItem('authToken') || '',

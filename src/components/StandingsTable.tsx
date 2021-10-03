@@ -1,6 +1,6 @@
-import { ClassesObjectModel } from 'models';
 import { ReactElement } from 'react';
-import Utils from 'shared/utils';
+import { ClassesObjectModel } from '../models/classes-object-model';
+import Utils from '../shared/utils';
 
 interface StandingsDto {
   calories: number;

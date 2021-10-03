@@ -1,30 +1,33 @@
-import { PrivateRoute } from 'components/PrivateRoute';
-import * as Pages from 'pages';
 import { ReactElement } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { PrivateRoute } from './components/PrivateRoute';
+import { HomePage } from './pages/HomePage';
+import { LoginPage } from './pages/LoginPage';
+import { LogoutPage } from './pages/LogoutPage';
+import { RegisterPage } from './pages/RegisterPage';
 
 export const Routes = (): ReactElement => (
   <Switch>
     <Route path='/' exact>
-      <Pages.HomePage />
+      <HomePage />
     </Route>
     {/* <Route path='/about'>
-      <Pages.AboutPage />
+      <AboutPage />
     </Route> */}
     <Route path='/login'>
-      <Pages.LoginPage />
+      <LoginPage />
     </Route>
     <PrivateRoute path='/logout'>
-      <Pages.LogoutPage />
+      <LogoutPage />
     </PrivateRoute>
     {/* <PrivateRoute path='/standings'>
-      <Pages.StandingsPage />
+      <StandingsPage />
     </PrivateRoute> */}
     <Route path='/register'>
-      <Pages.RegisterPage />
+      <RegisterPage />
     </Route>
     {/* <PrivateRoute path='/profile'>
-      <Pages.ProfilePage />
+      <ProfilePage />
     </PrivateRoute> */}
   </Switch>
 );

@@ -1,8 +1,8 @@
 import { Form, Formik, FormikHelpers } from 'formik';
-import { Button } from 'lib/Button';
-import { TextField } from 'lib/TextField';
 import { ReactElement, useState } from 'react';
-import { AddWorkoutModel } from 'shared/types';
+import { Button } from '../../lib/Button';
+import { TextField } from '../../lib/TextField';
+import { AddWorkoutModel } from '../../shared/types';
 
 interface Props {
   handleSubmitFormFunc: (data: AddWorkoutModel) => void;

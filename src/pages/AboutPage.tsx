@@ -1,6 +1,6 @@
-import { PageContainer } from 'components/containers';
-import { Header } from 'lib/Header';
 import { ReactElement } from 'react';
+import { PageContainer } from '../components/containers/PageContainer';
+import { Header } from '../lib/Header';
 
 export const AboutPage = (): ReactElement => (
   <PageContainer>

@@ -1,6 +1,6 @@
-import { AuthContext } from 'contexts';
-import { NavbarLink } from 'lib/NavbarLink';
 import { ReactElement, useContext } from 'react';
+import { AuthContext } from '../contexts/authContext';
+import { NavbarLink } from '../lib/NavbarLink';
 
 export const Navbar = (): ReactElement => {
   const { isLoggedIn } = useContext(AuthContext);

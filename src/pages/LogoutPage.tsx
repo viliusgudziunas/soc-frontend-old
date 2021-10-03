@@ -1,9 +1,11 @@
-import { PageContainer } from 'components/containers';
-import { AuthContext } from 'contexts';
-import { Header } from 'lib/Header';
 import { ReactElement, useContext, useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
-import { ApiService, AuthService, ToastService } from 'services';
+import { PageContainer } from '../components/containers/PageContainer';
+import { AuthContext } from '../contexts/authContext';
+import { Header } from '../lib/Header';
+import { ApiService } from '../services/apiService';
+import { AuthService } from '../services/authService';
+import { ToastService } from '../services/toastService';
 
 export const LogoutPage = (): ReactElement => {
   const { setIsLoggedIn } = useContext(AuthContext);

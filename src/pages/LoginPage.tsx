@@ -1,13 +1,14 @@
 import { AxiosResponse } from 'axios';
-import { PageContainer } from 'components/containers';
-import { LoginForm } from 'components/forms';
-import { AuthContext } from 'contexts';
-import { Header } from 'lib/Header';
-import { UserLoginModel } from 'models';
 import { ReactElement, useContext, useState } from 'react';
 import { Redirect } from 'react-router';
-import { AuthService, ToastService } from 'services';
-import { ApiService, ResponseWithDataDto } from 'services/apiService';
+import { PageContainer } from '../components/containers/PageContainer';
+import { LoginForm } from '../components/forms/LoginForm';
+import { AuthContext } from '../contexts/authContext';
+import { Header } from '../lib/Header';
+import { UserLoginModel } from '../models/userModel';
+import { ApiService, ResponseWithDataDto } from '../services/apiService';
+import { AuthService } from '../services/authService';
+import { ToastService } from '../services/toastService';
 
 export const LoginPage = (): ReactElement => {
   const { setIsLoggedIn } = useContext(AuthContext);
